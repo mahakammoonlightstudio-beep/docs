@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dokumentasi - Mahakam Moonlight Studio</title>
+<meta name="description" content="Dokumentasi terpusat seluruh proyek Mahakam Moonlight Studio: panduan instalasi, arsitektur, lisensi, dan keamanan.">
+<style>
+  :root {
+    --bg: #101014; --surface: #17171d; --line: #26262e;
+    --fg: #eceae4; --dim: #9b98a3; --accent: #2dd4bf;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg); color: var(--fg); line-height: 1.65;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  header { border-bottom: 1px solid var(--line); padding: 28px 0; }
+  header .wrap { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  header h1 { font-size: 1.15rem; letter-spacing: .01em; }
+  header h1 span { color: var(--accent); }
+  header a { color: var(--dim); text-decoration: none; font-size: .9rem; }
+  header a:hover { color: var(--fg); }
+  .hero { padding: 56px 0 40px; border-bottom: 1px solid var(--line); }
+  .hero h2 { font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.2; max-width: 640px; }
+  .hero p { margin-top: 14px; color: var(--dim); max-width: 620px; }
+  .hero code { background: var(--surface); border: 1px solid var(--line); padding: 2px 8px; border-radius: 6px; font-size: .88em; }
+  section { padding: 44px 0; border-bottom: 1px solid var(--line); }
+  section > h3 { font-size: .8rem; text-transform: uppercase; letter-spacing: .18em; color: var(--accent); margin-bottom: 20px; }
+  .grid { display: grid; gap: 14px; }
+  @media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }
+  article {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 12px; padding: 20px 22px;
+  }
+  article h4 { font-size: 1.02rem; }
+  article .stack { margin-top: 2px; font-family: ui-monospace, "Cascadia Mono", monospace; font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--dim); }
+  article p { margin-top: 8px; font-size: .92rem; color: var(--dim); }
+  article .links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .88rem; }
+  article .links a { color: var(--accent); text-decoration: none; }
+  article .links a:hover { text-decoration: underline; }
+  article .badge { display: inline-block; margin-top: 12px; font-size: .68rem; font-family: ui-monospace, monospace; text-transform: uppercase; letter-spacing: .08em; padding: 2px 9px; border-radius: 99px; border: 1px solid var(--line); color: var(--dim); }
+  article .badge.open { border-color: rgba(45, 212, 191, .4); color: var(--accent); }
+  article .badge.closed { border-color: rgba(248, 113, 113, .4); color: #f87171; }
+  ul.list { list-style: none; margin-top: 6px; }
+  ul.list li { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: .95rem; color: var(--dim); }
+  ul.list li:last-child { border-bottom: 0; }
+  ul.list strong { color: var(--fg); font-weight: 600; }
+  footer { padding: 30px 0 46px; color: var(--dim); font-size: .85rem; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--fg); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Mahakam Moonlight <span>Studio</span> — Docs</h1>
+    <a href="https://github.com/mahakammoonlightstudio-beep">GitHub</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h2>Dokumentasi terpusat seluruh proyek studio.</h2>
+    <p>Satu halaman untuk semua: tautan live, repositori, dokumen arsitektur, deploy, lisensi, dan kebijakan keamanan. Kredensial tidak pernah ikut ke repositori - konfigurasi lokal diisi lewat berkas <code>config.local.php</code> yang dikecualikan lewat <code>.gitignore</code>.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h3>Proyek PHP - Aplikasi Penuh</h3>
+    <div class="grid">
+      <article>
+        <h4>Mamoon Forum</h4>
+        <p class="stack">PHP · MySQL · Vanilla JS</p>
+        <p>Forum diskusi komunitas: posting anonim atau akun, voting dengan anti-duplikat di level database, reputasi, profil, kompresi gambar otomatis via GD.</p>
+        <div class="links">
+          <a href="https://mamoon-forum.rf.gd/">Live</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/mamoon-forum">Repo</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/mamoon-forum#instalasi">Instalasi</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/mamoon-forum/blob/main/SECURITY.md">Keamanan</a>
+        </div>
+        <span class="badge open">CC BY 4.0</span>
+      </article>
+      <article>
+        <h4>Main Pintar</h4>
+        <p class="stack">PHP 8 · MySQL · PWA</p>
+        <p>Kuis edukatif kearsipan: mode solo dengan timer dan bonus kecepatan, live multiplayer dengan kode ruangan, leaderboard, dan panel admin.</p>
+        <div class="links">
+          <a href="https://mainpintar.rf.gd/">Live</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/main-pintar-new">Repo</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/main-pintar-new/blob/main/ARCHITECTURE.md">Arsitektur</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/main-pintar-new/blob/main/DEPLOY.md">Deploy</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/main-pintar-new/blob/main/lisensi.md">Lisensi</a>
+        </div>
+        <span class="badge closed">Proprieter - Diarpus Kukar</span>
+      </article>
+      <article>
+        <h4>Kuis Arsip</h4>
+        <p class="stack">PHP 8 · MySQL · PWA</p>
+        <p>Sistem kuesioner dan evaluasi kearsipan: pengerjaan individu atau ruangan terjadwal, sertifikat otomatis dengan verifikasi publik, audit log.</p>
+        <div class="links">
+          <a href="https://kuis-arsip.rf.gd/">Live</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/kuis-arsip">Repo</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/kuis-arsip/blob/main/ARCHITECTURE.md">Arsitektur</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/kuis-arsip/blob/main/LISENSI.md">Lisensi</a>
+        </div>
+        <span class="badge closed">Proprieter - Diarpus Kukar</span>
+      </article>
+      <article>
+        <h4>Suara SMK</h4>
+        <p class="stack">PHP · MySQL · PWA</p>
+        <p>Platform penilaian dan masukan anonim untuk organisasi siswa: rating bintang, komentar tersensor, anti-duplikat per perangkat, panel admin dengan ekspor CSV.</p>
+        <div class="links">
+          <a href="https://suara-smkn1tgr.infinityfreeapp.com/">Live</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/suarasmk">Repo</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/suarasmk#instalasi">Instalasi</a>
+        </div>
+        <span class="badge open">CC BY 4.0</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Situs Statis</h3>
+    <div class="grid">
+      <article>
+        <h4>Alasandong</h4>
+        <p class="stack">HTML · CSS · Vanilla JS</p>
+        <p>Generator alasan otomatis dwibahasa dengan mesin kombinatorial ratusan ribu variasi. 100% client-side, PWA, tanpa backend.</p>
+        <div class="links">
+          <a href="https://alasandong.my.id/">Live</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/alasandong.my.id">Repo</a>
+        </div>
+        <span class="badge open">CC BY 4.0</span>
+      </article>
+      <article>
+        <h4>Portfolio</h4>
+        <p class="stack">Tailwind CSS v4 · PWA</p>
+        <p>Situs portofolio pribadi, dwibahasa Indonesia/Inggris, sepenuhnya statis dengan pipeline build Tailwind v4.</p>
+        <div class="links">
+          <a href="https://fauzan-raffa.page.gd/">Live</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/cv-web-saya">Repo</a>
+        </div>
+        <span class="badge open">CC BY 4.0</span>
+      </article>
+      <article>
+        <h4>Mahakam Moonlight Studio</h4>
+        <p class="stack">Tailwind CSS v4 · PWA</p>
+        <p>Situs resmi studio: karya, cerita, dan FAQ. Dwibahasa, sepenuhnya statis.</p>
+        <div class="links">
+          <a href="https://mahakam-moonlight-studio.page.gd/">Live</a>
+          <a href="https://github.com/mahakammoonlightstudio-beep/mms">Repo</a>
+        </div>
+        <span class="badge open">CC BY 4.0</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Kebijakan Bersama</h3>
+    <ul class="list">
+      <li><strong>Lisensi</strong> - Mayoritas proyek di bawah CC BY 4.0 (bebas digunakan dengan kredit). Main Pintar dan Kuis Arsip dimiliki Dinas Kearsipan dan Perpustakaan Kab. Kutai Kartanegara (Bidang P2A) dan tidak dapat digunakan tanpa izin tertulis.</li>
+      <li><strong>Keamanan</strong> - Laporan kerentanan dikirim pribadi ke <strong>mahakammoonlightstudio@gmail.com</strong>, bukan lewat issue publik. Respons diupayakan 7 hari kerja. Kebijakan lengkap ada di berkas SECURITY.md tiap repositori.</li>
+      <li><strong>Kredensial</strong> - Seluruh proyek memisahkan konfigurasi rahasia ke berkas lokal (<code>config.local.php</code>) yang dikecualikan dari repositori. Templatnya tersedia sebagai <code>*.example.php</code>.</li>
+      <li><strong>Stack dan prinsip</strong> - PHP native tanpa framework, MySQL/MariaDB, Vanilla JS, PWA. Ringan, cepat, dan berjalan di shared hosting mana pun.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Mahakam Moonlight Studio - Tenggarong, Kalimantan Timur</span>
+    <a href="mailto:mahakammoonlightstudio@gmail.com">mahakammoonlightstudio@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
