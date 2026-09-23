@@ -34,6 +34,9 @@ header nav a:hover, header nav a[aria-current] { color: var(--fg); }
 section { padding: 40px 0; border-bottom: 1px solid var(--line); }
 section > h3 { font-size: .8rem; text-transform: uppercase; letter-spacing: .18em; color: var(--accent); margin-bottom: 18px; }
 section > .wrap > p { color: var(--dim); max-width: 720px; }
+.shot { margin: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.shot img { display: block; width: 100%; height: auto; }
+.shot figcaption { padding: 10px 16px; font-size: .78rem; color: var(--dim); border-top: 1px solid var(--line); font-family: ui-monospace, "Cascadia Mono", monospace; }
 ul.feat { list-style: none; margin-top: 4px; }
 ul.feat li { padding: 10px 0 10px 22px; position: relative; color: var(--dim); font-size: .95rem; border-bottom: 1px solid var(--line); }
 ul.feat li:last-child { border-bottom: 0; }
