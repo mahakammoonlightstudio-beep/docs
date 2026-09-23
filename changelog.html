@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Changelog - Mahakam Moonlight Studio</title>
+<meta name="description" content="Rangkuman rilis dan perubahan seluruh proyek Mahakam Moonlight Studio.">
+<style>
+  :root {
+    --bg: #101014; --surface: #17171d; --line: #26262e;
+    --fg: #eceae4; --dim: #9b98a3; --accent: #2dd4bf;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg); color: var(--fg); line-height: 1.65;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  header { border-bottom: 1px solid var(--line); padding: 28px 0; }
+  header .wrap { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  header h1 { font-size: 1.15rem; letter-spacing: .01em; }
+  header h1 span { color: var(--accent); }
+  header nav { display: flex; gap: 18px; }
+  header nav a { color: var(--dim); text-decoration: none; font-size: .9rem; }
+  header nav a:hover, header nav a[aria-current] { color: var(--fg); }
+  .hero { padding: 48px 0 36px; border-bottom: 1px solid var(--line); }
+  .hero h2 { font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.2; }
+  .hero p { margin-top: 12px; color: var(--dim); max-width: 640px; }
+  section { padding: 40px 0; border-bottom: 1px solid var(--line); }
+  .rel-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
+  .ver { font-family: ui-monospace, "Cascadia Mono", monospace; font-size: 1.05rem; color: var(--accent); }
+  .rel-date { font-size: .8rem; color: var(--dim); text-transform: uppercase; letter-spacing: .1em; }
+  .rel-sub { color: var(--dim); font-size: .92rem; margin-bottom: 22px; }
+  ul.entries { list-style: none; }
+  ul.entries li {
+    display: grid; gap: 2px 18px; padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  @media (min-width: 720px) { ul.entries li { grid-template-columns: 180px 1fr; } }
+  ul.entries .proj { font-weight: 600; }
+  ul.entries .proj a { color: var(--fg); text-decoration: none; }
+  ul.entries .proj a:hover { color: var(--accent); }
+  ul.entries .desc { color: var(--dim); font-size: .92rem; }
+  ul.entries .desc a { color: var(--accent); text-decoration: none; }
+  ul.entries .desc a:hover { text-decoration: underline; }
+  table.hist { width: 100%; border-collapse: collapse; font-size: .9rem; margin-top: 6px; }
+  table.hist th { text-align: left; font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--dim); font-weight: 600; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  table.hist td { padding: 10px; border-bottom: 1px solid var(--line); color: var(--dim); vertical-align: top; }
+  table.hist td:first-child { color: var(--fg); font-family: ui-monospace, monospace; white-space: nowrap; }
+  footer { padding: 30px 0 46px; color: var(--dim); font-size: .85rem; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--fg); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Mahakam Moonlight <span>Studio</span> — Docs</h1>
+    <nav>
+      <a href="index.html">Ikhtisar</a>
+      <a href="changelog.html" aria-current="page">Changelog</a>
+      <a href="https://github.com/mahakammoonlightstudio-beep">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h2>Changelog</h2>
+    <p>Rangkuman rilis publik seluruh proyek. Detail lengkap setiap rilis ada di halaman Releases masing-masing repositori.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="rel-head"><span class="ver">v2.0.0</span><span class="rel-date">23 September 2026</span></div>
+    <p class="rel-sub">Empat proyek merilis v2.0.0: pembangunan ulang dengan fitur besar.</p>
+    <ul class="entries">
+      <li>
+        <span class="proj"><a href="https://github.com/mahakammoonlightstudio-beep/mamoon-forum/releases/tag/v2.0.0">Mamoon Forum</a></span>
+        <span class="desc">Rewrite ringan dan cepat: voting thread dan balasan dengan anti-duplikat di level database, reputasi, halaman dan edit profil, edit konten oleh pembuatnya, kompresi gambar otomatis. <a href="https://github.com/mahakammoonlightstudio-beep/mamoon-forum/releases">Release notes</a></span>
+      </li>
+      <li>
+        <span class="proj"><a href="https://github.com/mahakammoonlightstudio-beep/main-pintar-new/releases/tag/v2.0.0">Main Pintar</a></span>
+        <span class="desc">Mode Live Multiplayer dengan kode ruangan enam karakter, tiga role pengguna, kategori/soal aktif-nonaktif, leaderboard dan statistik. <a href="https://github.com/mahakammoonlightstudio-beep/main-pintar-new/releases">Release notes</a></span>
+      </li>
+      <li>
+        <span class="proj"><a href="https://github.com/mahakammoonlightstudio-beep/cv-web-saya/releases/tag/v2.0.0">Portfolio</a></span>
+        <span class="desc">Migrasi ke pipeline resmi Tailwind CSS v4 dengan design token via @theme, dwibahasa, PWA, dan pembaruan konten proyek. <a href="https://github.com/mahakammoonlightstudio-beep/cv-web-saya/releases">Release notes</a></span>
+      </li>
+      <li>
+        <span class="proj"><a href="https://github.com/mahakammoonlightstudio-beep/mms/releases/tag/v2.0.0">Situs Studio</a></span>
+        <span class="desc">Migrasi ke Tailwind CSS v4, dwibahasa, PWA, dan pembaruan konten Mamoon-Forum yang resmi tayang. <a href="https://github.com/mahakammoonlightstudio-beep/mms/releases">Release notes</a></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="rel-head"><span class="ver">v1.0.0</span><span class="rel-date">23 September 2026</span></div>
+    <p class="rel-sub">Rilis stabil pertama bagi tiga proyek.</p>
+    <ul class="entries">
+      <li>
+        <span class="proj"><a href="https://github.com/mahakammoonlightstudio-beep/suarasmk/releases/tag/v1.0.0">Suara SMK</a></span>
+        <span class="desc">Rilis stabil pertama: penilaian anonim, anti-duplikat per perangkat, panel admin dengan ekspor CSV, PWA. <a href="https://github.com/mahakammoonlightstudio-beep/suarasmk/releases">Release notes</a></span>
+      </li>
+      <li>
+        <span class="proj"><a href="https://github.com/mahakammoonlightstudio-beep/kuis-arsip/releases/tag/v1.0.0">Kuis Arsip</a></span>
+        <span class="desc">Rilis stabil pertama: kuesioner ruangan dan individu, sertifikat dengan verifikasi publik, panel administrasi lengkap. <a href="https://github.com/mahakammoonlightstudio-beep/kuis-arsip/releases">Release notes</a></span>
+      </li>
+      <li>
+        <span class="proj"><a href="https://github.com/mahakammoonlightstudio-beep/alasandong.my.id/releases/tag/v1.0.0">Alasandong</a></span>
+        <span class="desc">Rilis publik pertama: mesin kombinatorial sekitar 389.000 variasi alasan dwibahasa, kartu gambar, blog 9 artikel, PWA. <a href="https://github.com/mahakammoonlightstudio-beep/alasandong.my.id/releases">Release notes</a></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="rel-head"><span class="ver">Riwayat internal</span><span class="rel-date">sebelum repositori publik</span></div>
+    <p class="rel-sub">Versi yang terdokumentasi pada dokumen lisensi sebelum publikasi ke GitHub.</p>
+    <table class="hist">
+      <thead>
+        <tr><th>Versi</th><th>Proyek</th><th>Perubahan utama</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>v1.0</td><td>Mamoon Forum</td><td>Forum awal: kategori, pencarian, sticky/locked thread, posting anonim.</td></tr>
+        <tr><td>v1.0</td><td>Kuis Arsip</td><td>Rilis awal: kuesioner ruangan dan individu, sertifikat, panel admin.</td></tr>
+        <tr><td>v1.0</td><td>Main Pintar</td><td>Rilis awal: kuis solo, mode live, leaderboard, panel admin.</td></tr>
+        <tr><td>v1.1</td><td>Kuis Arsip</td><td>Optimasi performa, perbaikan bug service worker dan timer ujian, audit keamanan.</td></tr>
+        <tr><td>v1.1</td><td>Main Pintar</td><td>Optimasi performa API polling, perbaikan bug timer, audit keamanan.</td></tr>
+        <tr><td>v1.2</td><td>Kuis Arsip</td><td>Desain sinematik (aurora, glass, glow), splash screen, profil v2 dengan lencana, sandbox kredensial.</td></tr>
+        <tr><td>v1.2</td><td>Main Pintar</td><td>Desain sinematik, splash screen, profil v2 dengan lencana, optimasi session-lock API.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Mahakam Moonlight Studio - Tenggarong, Kalimantan Timur</span>
+    <a href="mailto:mahakammoonlightstudio@gmail.com">mahakammoonlightstudio@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
