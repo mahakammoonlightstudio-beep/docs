@@ -27,15 +27,17 @@
     <p class="tag">Situs portofolio pribadi Muhammad Fauzan Raffa Al-Habsy - web developer dari SMKN 1 Tenggarong. Tailwind CSS v4, sepenuhnya statis, dwibahasa, PWA-ready.</p>
     <div class="badges">
       <span class="badge open">CC BY 4.0</span>
-      <span class="badge">Tailwind CSS v4</span>
-      <span class="badge">PWA</span>
+      <span class="badge">Bootstrap 5.3</span>
+      <span class="badge">3D interaktif</span>
+      <span class="badge">Tema mulus</span>
       <span class="badge">Dwibahasa</span>
-      <span class="badge">v2.0.0</span>
+      <span class="badge">PWA</span>
+      <span class="badge">v3.0.0</span>
     </div>
     <div class="cta">
       <a class="btn" href="https://fauzan-raffa.page.gd/">Buka Situs Live</a>
       <a class="btn ghost" href="https://github.com/mahakammoonlightstudio-beep/cv-web-saya">Repositori</a>
-      <a class="btn ghost" href="https://github.com/mahakammoonlightstudio-beep/cv-web-saya/releases/tag/v2.0.0">Release v2.0.0</a>
+      <a class="btn ghost" href="https://github.com/mahakammoonlightstudio-beep/cv-web-saya/releases/tag/v3.0.0">Release v3.0.0</a>
     </div>
   </div>
 </div>
@@ -44,8 +46,12 @@
   <div class="wrap">
     <h3>Tangkapan Layar</h3>
     <figure class="shot">
-      <img src="../assets/screenshots/portfolio.png" alt="Tampilan situs portofolio" loading="lazy" width="1280" height="800">
-      <figcaption>Halaman utama - fauzan-raffa.page.gd</figcaption>
+      <img src="../assets/screenshots/cv-web-hero-light.png" alt="Tampilan situs portofolio, mode terang" width="1440" height="900">
+      <figcaption>Hero 3D interaktif - mode terang - fauzan-raffa.page.gd</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="../assets/screenshots/cv-web-full-dark.png" alt="Situs portofolio versi penuh, mode gelap" loading="lazy" width="1440" height="2600">
+      <figcaption>Halaman penuh - mode gelap - fauzan-raffa.page.gd</figcaption>
     </figure>
   </div>
 </section>
@@ -53,7 +59,7 @@
 <section>
   <div class="wrap">
     <h3>Ringkasan</h3>
-    <p>Single page dengan bagian proyek terpilih, keahlian, perjalanan, dan ajakan kolaborasi. Dibangun ulang dengan pipeline build resmi Tailwind CSS v4 dan design token via <strong>@theme</strong> - satu berkas CSS hasil build yang sudah di-minify, tanpa framework JavaScript.</p>
+    <p>Single page dengan bagian proyek terpilih, keahlian, perjalanan, dan ajakan kolaborasi. Versi 3 memakai <strong>Bootstrap 5.3</strong> sebagai fondasi komponen ditambah lapisan desain kustom - tanpa framework JavaScript tambahan, tanpa CDN eksternal (semua vendor di-host sendiri).</p>
   </div>
 </section>
 
@@ -62,6 +68,9 @@
     <h3>Fitur Utama</h3>
     <ul class="feat">
       <li><strong>Dwibahasa Indonesia / Inggris</strong> - teks ditandai atribut data-id / data-en dan ditukar tanpa reload.</li>
+      <li><strong>Hero 3D interaktif</strong> - canvas 3D murni (tanpa Three.js): lapisan geometri parallax bergerak mengikuti kursor dan gyro perangkat, dengan penghormatan prefers-reduced-motion.</li>
+      <li><strong>Transisi tema yang halus</strong> - pergantian terang/gelap menganimasikan gradasi latar langsung (keyframe morph) plus cross-fade berbasis View Transitions API dengan fallback mulus.</li>
+      <li><strong>Interaksi UI yang hidup</strong> - scroll-reveal ber-IntersectionObserver, tilt 3D pada kartu, ripple pada tombol, lightbox galeri proyek, progress baca, back-to-top, salin email sekali klik, dan mode kontras tinggi.</li>
       <li><strong>PWA</strong> - manifest, service worker, dan ikon hasil generator otomatis (pure Node, tanpa dependensi).</li>
       <li><strong>Build pipeline Tailwind v4</strong> - mode watch untuk development, minify untuk produksi; hasil build ikut di-commit sehingga situs langsung bisa dibuka.</li>
       <li><strong>Statis dan cepat</strong> - dapat di-hosting di GitHub Pages, Netlify, Vercel, atau shared hosting mana pun.</li>
@@ -74,10 +83,11 @@
     <h3>Development</h3>
     <pre class="code">git clone https://github.com/mahakammoonlightstudio-beep/cv-web-saya.git
 cd cv-web-saya
-npm install
-npm run watch:css   # development
-npm run build       # produksi: generate ikon + minify CSS</pre>
-    <p class="note">Butuh Node.js 18+. Hasil build ditulis ke <code>assets/css/main.css</code> dan ikut di-commit.</p>
+# Situs statis - cukup buka index.html atau jalankan server:
+python -m http.server 8000
+# Build ikon PWA (opsional, murni Node tanpa dependensi):
+npm run build:icons</pre>
+    <p class="note">Bootstrap 5.3 sudah di-bundle di <code>assets/vendor/</code> - tidak ada CDN, tidak ada langkah build wajib.</p>
   </div>
 </section>
 
@@ -86,7 +96,7 @@ npm run build       # produksi: generate ikon + minify CSS</pre>
     <h3>Dokumentasi</h3>
     <ul class="list">
       <li><strong>README</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/cv-web-saya">panduan development dan deploy</a></li>
-      <li><strong>LICENSE</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/cv-web-saya/blob/main/LICENSE">CC BY 4.0</a></li>
+      <li><strong>SECURITY.md</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/cv-web-saya/security/policy">kebijakan pelaporan kerentanan</a></li>
     </ul>
   </div>
 </section>

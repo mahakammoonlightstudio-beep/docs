@@ -24,18 +24,20 @@
   <div class="wrap">
     <p class="crumb"><a href="../index.html">Semua proyek</a> / Situs Studio</p>
     <h2>Mahakam Moonlight Studio</h2>
-    <p class="tag">Situs resmi studio - tempat imajinasi mengalir. Karya studio, cerita di baliknya, dan FAQ. Tailwind CSS v4, sepenuhnya statis, dwibahasa, PWA-ready.</p>
+    <p class="tag">Situs resmi studio - tempat imajinasi mengalir. Karya studio, cerita di baliknya, dan FAQ. Bootstrap 5.3, scene 3D bulan + bintang, dwibahasa, PWA-ready.</p>
     <div class="badges">
       <span class="badge open">CC BY 4.0</span>
-      <span class="badge">Tailwind CSS v4</span>
-      <span class="badge">PWA</span>
+      <span class="badge">Bootstrap 5.3</span>
+      <span class="badge">Scene 3D bulan</span>
+      <span class="badge">Tema mulus</span>
       <span class="badge">Dwibahasa</span>
-      <span class="badge">v2.0.0</span>
+      <span class="badge">PWA</span>
+      <span class="badge">v3.0.0</span>
     </div>
     <div class="cta">
       <a class="btn" href="https://mahakam-moonlight-studio.page.gd/">Buka Situs Live</a>
       <a class="btn ghost" href="https://github.com/mahakammoonlightstudio-beep/mms">Repositori</a>
-      <a class="btn ghost" href="https://github.com/mahakammoonlightstudio-beep/mms/releases/tag/v2.0.0">Release v2.0.0</a>
+      <a class="btn ghost" href="https://github.com/mahakammoonlightstudio-beep/mms/releases/tag/v3.0.0">Release v3.0.0</a>
     </div>
   </div>
 </div>
@@ -44,8 +46,12 @@
   <div class="wrap">
     <h3>Tangkapan Layar</h3>
     <figure class="shot">
-      <img src="../assets/screenshots/studio.png" alt="Tampilan situs resmi Mahakam Moonlight Studio" loading="lazy" width="1280" height="800">
-      <figcaption>Halaman utama - mahakam-moonlight-studio.page.gd</figcaption>
+      <img src="../assets/screenshots/studio-full-dark.png" alt="Situs studio penuh, mode gelap dengan scene 3D bulan" width="1440" height="2600">
+      <figcaption>Halaman penuh, mode gelap dengan scene 3D bulan - mahakam-moonlight-studio.page.gd</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="../assets/screenshots/studio-full-light.png" alt="Situs studio penuh, mode terang" loading="lazy" width="1440" height="2600">
+      <figcaption>Halaman penuh, mode terang - mahakam-moonlight-studio.page.gd</figcaption>
     </figure>
   </div>
 </section>
@@ -53,7 +59,7 @@
 <section>
   <div class="wrap">
     <h3>Ringkasan</h3>
-    <p>Wajah publik studio: kartu karya untuk setiap proyek (dengan status tayang dan tautan live), linimasa perjalanan studio, dan FAQ. Satu berkas CSS hasil build Tailwind v4 yang sudah di-minify - tanpa framework JavaScript.</p>
+    <p>Wajah publik studio: kartu karya untuk setiap proyek (dengan status tayang dan tautan live), linimasa perjalanan studio, dan FAQ. Versi 3 memakai <strong>Bootstrap 5.3</strong> ditambah lapisan desain kustom dengan aksen khas studio - vendor di-host sendiri, tanpa CDN.</p>
   </div>
 </section>
 
@@ -62,7 +68,10 @@
     <h3>Fitur Utama</h3>
     <ul class="feat">
       <li><strong>Karya Studio</strong> - portofolio proyek dengan status (Tayang, Aktif, Produksi) dan tautan live per proyek.</li>
+      <li><strong>Scene 3D khas studio</strong> - bulan 3D murni canvas (tanpa Three.js) dengan terminator realistis, bintang berkelip paralaks, dan shooting star acak; bereaksi terhadap kursor dan scroll.</li>
       <li><strong>Dwibahasa Indonesia / Inggris</strong> - teks ditandai atribut data-id / data-en, ditukar tanpa reload.</li>
+      <li><strong>Transisi tema yang halus</strong> - pergantian terang/gelap dengan gradasi latar teranimasi dan cross-fade berbasis View Transitions API (fallback mulus).</li>
+      <li><strong>Interaksi UI yang hidup</strong> - scroll-reveal, tilt 3D pada kartu, ripple tombol, progress baca, back-to-top, dan penghormatan prefers-reduced-motion.</li>
       <li><strong>Cerita dan FAQ</strong> - profil studio dan pertanyaan yang sering diajukan, dengan konten terkini.</li>
       <li><strong>PWA</strong> - manifest dan service worker untuk pemasangan dan akses offline.</li>
     </ul>
@@ -74,10 +83,9 @@
     <h3>Development</h3>
     <pre class="code">git clone https://github.com/mahakammoonlightstudio-beep/mms.git
 cd mms
-npm install
-npm run watch:css   # development
-npm run build       # produksi: minify CSS</pre>
-    <p class="note">Butuh Node.js 18+. Berkas verifikasi Google Search Console (<code>google*.html</code>) dikecualikan dari repositori - tambahkan langsung di server bila perlu verifikasi ulang.</p>
+# Situs statis - cukup buka index.html atau jalankan server:
+python -m http.server 8000</pre>
+    <p class="note">Bootstrap 5.3 sudah di-bundle di <code>assets/vendor/</code> - tidak ada CDN, tidak ada langkah build wajib. Berkas verifikasi Google Search Console (<code>google*.html</code>) dikecualikan dari repositori - tambahkan langsung di server bila perlu verifikasi ulang.</p>
   </div>
 </section>
 
@@ -87,6 +95,7 @@ npm run build       # produksi: minify CSS</pre>
     <ul class="list">
       <li><strong>README</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/mms">panduan development, deploy, dan tautan sosial</a></li>
       <li><strong>LICENSE</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/mms/blob/main/LICENSE">CC BY 4.0</a></li>
+      <li><strong>SECURITY.md</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/mms/security/policy">kebijakan pelaporan kerentanan</a></li>
     </ul>
   </div>
 </section>
