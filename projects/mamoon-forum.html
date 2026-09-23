@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mamoon Forum - Dokumentasi Mahakam Moonlight Studio</title>
+<meta name="description" content="Detail proyek Mamoon Forum: forum diskusi komunitas ringan berbasis PHP murni dan MySQL.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Mahakam Moonlight <span>Studio</span> — Docs</h1>
+    <nav>
+      <a href="../index.html">Ikhtisar</a>
+      <a href="../changelog.html">Changelog</a>
+      <a href="https://github.com/mahakammoonlightstudio-beep">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">Semua proyek</a> / Mamoon Forum</p>
+    <h2>Mamoon Forum</h2>
+    <p class="tag">Forum diskusi komunitas ringan berbasis PHP murni dan MySQL - posting anonim atau akun, tanpa framework, tanpa build step, tanpa CDN eksternal.</p>
+    <div class="badges">
+      <span class="badge open">CC BY 4.0</span>
+      <span class="badge">PHP 7.4+</span>
+      <span class="badge">MySQL / MariaDB</span>
+      <span class="badge">Tanpa Framework</span>
+      <span class="badge">v2.0.0</span>
+    </div>
+    <div class="cta">
+      <a class="btn" href="https://mamoon-forum.rf.gd/">Buka Live Demo</a>
+      <a class="btn ghost" href="https://github.com/mahakammoonlightstudio-beep/mamoon-forum">Repositori</a>
+      <a class="btn ghost" href="https://github.com/mahakammoonlightstudio-beep/mamoon-forum/releases/tag/v2.0.0">Release v2.0.0</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h3>Ringkasan</h3>
+    <p>Forum bergaya komunitas diskusi dengan dukungan posting anonim maupun akun terdaftar. Setiap halaman berukuran puluhan kilobyte dan tetap cepat di shared hosting. Versi 2.0.0 adalah penulisan ulang besar dengan fokus pada ringan dan cepat, ditambah fitur sosial: voting, reputasi, profil, dan edit konten.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Fitur Utama</h3>
+    <ul class="feat">
+      <li><strong>Posting anonim atau akun</strong> - forum berfungsi penuh tanpa login; akun untuk voting, avatar, dan moderasi.</li>
+      <li><strong>Voting thread dan balasan</strong> - upvote/downvote dengan toggle dan switch; satu vote per pengguna dijaga <strong>unique key di level database</strong>.</li>
+      <li><strong>Pengurutan Terbaru / Teratas</strong> - berdasarkan waktu aktif atau skor vote, dengan badge Hot otomatis di atas ambang batas.</li>
+      <li><strong>Reputasi</strong> - akumulasi skor vote dari seluruh thread dan balasan pengguna, dihitung langsung dari data vote.</li>
+      <li><strong>Profil dan edit profil</strong> - statistik aktivitas, avatar dikompres otomatis maksimal 256px, ganti password.</li>
+      <li><strong>Edit thread dan balasan</strong> - pembuat dapat mengubah konten; perubahan ditandai "(diedit)". Moderator dapat mengedit semua.</li>
+      <li><strong>Kompresi gambar otomatis</strong> - unggahan di-resize maksimal 1280px, disimpan sebagai WebP/JPEG, umumnya puluhan KB.</li>
+      <li><strong>Kategori, pencarian, sticky dan locked thread</strong>, pagination 20 thread / 15 balasan per halaman.</li>
+      <li><strong>Tema terang dan gelap</strong> mengikuti preferensi sistem; notifikasi toast.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Keamanan</h3>
+    <ul class="feat">
+      <li>Prepared statements untuk seluruh query; output di-escape dengan <strong>htmlspecialchars</strong>.</li>
+      <li>CSRF token per sesi di setiap form POST; validasi URL tujuan untuk mencegah open redirect.</li>
+      <li>Unggahan divalidasi dari isi berkas (bukan ekstensi), diproses ulang via <strong>GD</strong>, eksekusi PHP dinonaktifkan di folder uploads.</li>
+      <li>Rate limit per IP untuk thread, balasan, vote, login, pendaftaran, dan edit profil; honeypot anti-spam bot.</li>
+      <li>Password disimpan dengan <strong>password_hash() (bcrypt)</strong>.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Instalasi Singkat</h3>
+    <pre class="code">git clone https://github.com/mahakammoonlightstudio-beep/mamoon-forum.git
+mysql -u USER -p NAMA_DATABASE &lt; database/schema.sql
+cp config.example.php config.php    # lalu isi kredensial database
+# opsional data demo: mysql -u USER -p NAMA_DATABASE &lt; database/seed-demo.sql
+php -S localhost:8000</pre>
+    <p class="note">Untuk database versi lama, jalankan pula <code>database/upgrade.sql</code>, <code>upgrade-votes.sql</code>, dan <code>upgrade-edit.sql</code> - semuanya aman terhadap data yang sudah ada. Pengguna Laravel Herd dapat memakai <code>~/.config/herd/bin/php84/php.exe -S localhost:8000</code>. Panduan lengkap: <a href="https://github.com/mahakammoonlightstudio-beep/mamoon-forum#instalasi">README - Instalasi</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Dokumentasi</h3>
+    <ul class="list">
+      <li><strong>README</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/mamoon-forum#instalasi">instalasi lengkap</a>, <a href="https://github.com/mahakammoonlightstudio-beep/mamoon-forum#struktur-proyek">struktur proyek</a>, <a href="https://github.com/mahakammoonlightstudio-beep/mamoon-forum#catatan-keamanan">catatan keamanan</a></li>
+      <li><strong>SECURITY.md</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/mamoon-forum/blob/main/SECURITY.md">kebijakan pelaporan kerentanan</a></li>
+      <li><strong>LICENSE</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/mamoon-forum/blob/main/LICENSE">CC BY 4.0</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Mahakam Moonlight Studio - Tenggarong, Kalimantan Timur</span>
+    <a href="mailto:mahakammoonlightstudio@gmail.com">mahakammoonlightstudio@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>

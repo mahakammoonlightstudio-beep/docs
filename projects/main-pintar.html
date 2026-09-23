@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Main Pintar - Dokumentasi Mahakam Moonlight Studio</title>
+<meta name="description" content="Detail proyek Main Pintar: kuis edukatif kearsipan dengan mode solo dan live multiplayer.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Mahakam Moonlight <span>Studio</span> — Docs</h1>
+    <nav>
+      <a href="../index.html">Ikhtisar</a>
+      <a href="../changelog.html">Changelog</a>
+      <a href="https://github.com/mahakammoonlightstudio-beep">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">Semua proyek</a> / Main Pintar</p>
+    <h2>Main Pintar</h2>
+    <p class="tag">Kuis edukatif bertema kearsipan untuk Dinas Kearsipan dan Perpustakaan (Diarpus) Kabupaten Kutai Kartanegara - mode solo dengan bonus kecepatan, dan live multiplayer dengan kode ruangan.</p>
+    <div class="badges">
+      <span class="badge closed">Proprieter - Diarpus Kukar</span>
+      <span class="badge">PHP 8+</span>
+      <span class="badge">MySQL / MariaDB</span>
+      <span class="badge">PWA</span>
+      <span class="badge">v2.0.0</span>
+    </div>
+    <div class="cta">
+      <a class="btn" href="https://mainpintar.rf.gd/">Buka Situs Live</a>
+      <a class="btn ghost" href="https://github.com/mahakammoonlightstudio-beep/main-pintar-new">Repositori</a>
+      <a class="btn ghost" href="https://github.com/mahakammoonlightstudio-beep/main-pintar-new/releases/tag/v2.0.0">Release v2.0.0</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h3>Ringkasan</h3>
+    <p>Aplikasi kuis edukatif dengan dua mode permainan: <strong>Mode Solo</strong> (sepuluh soal acak per kategori, timer per soal dengan bonus kecepatan) dan <strong>Mode Live Multiplayer</strong> (host membuat sesi dengan kode ruangan enam karakter; peserta bergabung dan soal tersinkron melalui polling tiap 3-4 detik, aman untuk limit hit shared hosting).</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Fitur Utama</h3>
+    <ul class="feat">
+      <li><strong>Tiga role pengguna</strong> - admin (dasbor, kelola soal/kategori/pengguna, analitik), peserta (kuis, leaderboard, statistik), dan guest (main tanpa akun, skor tidak masuk leaderboard).</li>
+      <li><strong>Live multiplayer</strong> - monitor sesi real-time untuk host, distribusi jawaban, penyimpanan skor batch.</li>
+      <li><strong>Kategori dan soal aktif/nonaktif</strong> - arsipkan tanpa menghapus; otomatis disembunyikan dari semua mode.</li>
+      <li><strong>Leaderboard dan statistik</strong> - global dan per peserta: akurasi, tren bulanan, performa per kategori.</li>
+      <li><strong>Multi-bahasa (ID/EN)</strong> - prioritas: akun pengguna, cookie, lalu setelan admin.</li>
+      <li><strong>Notifikasi broadcast</strong>, pengaturan sistem (registrasi on/off, mode pemeliharaan), dan mode tamu dengan transfer data ke akun.</li>
+      <li><strong>PWA</strong> - manifest, service worker, splash screen, halaman offline.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Instalasi Singkat</h3>
+    <pre class="code">git clone https://github.com/mahakammoonlightstudio-beep/main-pintar-new.git
+mysql -u USER -p NAMA_DATABASE &lt; database.sql
+mysql -u USER -p NAMA_DATABASE &lt; database-upgrade.sql
+cp includes/config.local.example.php includes/config.local.php  # isi kredensial + APP_SECRET
+php -S localhost:8000</pre>
+    <p class="note">Ganti password akun admin default segera setelah instalasi. Pengguna Laravel Herd dapat memakai <code>~/.config/herd/bin/php84/php.exe -S localhost:8000</code>. Kredensial tidak pernah ikut ke repositori.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Dokumentasi</h3>
+    <ul class="list">
+      <li><strong>ARCHITECTURE.md</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/main-pintar-new/blob/main/ARCHITECTURE.md">panduan arsitektur dan konvensi kode</a></li>
+      <li><strong>DEPLOY.md</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/main-pintar-new/blob/main/DEPLOY.md">langkah deploy ke InfinityFree</a></li>
+      <li><strong>lisensi.md</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/main-pintar-new/blob/main/lisensi.md">bukti kepemilikan dan riwayat versi</a></li>
+      <li><strong>SECURITY.md</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/main-pintar-new/blob/main/SECURITY.md">kebijakan pelaporan kerentanan</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Mahakam Moonlight Studio - Tenggarong, Kalimantan Timur</span>
+    <a href="mailto:mahakammoonlightstudio@gmail.com">mahakammoonlightstudio@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>

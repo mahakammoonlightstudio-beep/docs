@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuis Arsip - Dokumentasi Mahakam Moonlight Studio</title>
+<meta name="description" content="Detail proyek Kuis Arsip: sistem kuesioner dan evaluasi kearsipan dengan sertifikat terverifikasi publik.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Mahakam Moonlight <span>Studio</span> — Docs</h1>
+    <nav>
+      <a href="../index.html">Ikhtisar</a>
+      <a href="../changelog.html">Changelog</a>
+      <a href="https://github.com/mahakammoonlightstudio-beep">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">Semua proyek</a> / Kuis Arsip</p>
+    <h2>Kuis Arsip</h2>
+    <p class="tag">Sistem kuesioner dan evaluasi kearsipan untuk Dinas Kearsipan dan Perpustakaan (Diarpus) Kabupaten Kutai Kartanegara - pengerjaan individu atau ruangan terjadwal, penilaian otomatis, sertifikat dengan verifikasi publik.</p>
+    <div class="badges">
+      <span class="badge closed">Proprieter - Diarpus Kukar</span>
+      <span class="badge">PHP 8+</span>
+      <span class="badge">MySQL / MariaDB</span>
+      <span class="badge">PWA</span>
+      <span class="badge">v1.0.0</span>
+    </div>
+    <div class="cta">
+      <a class="btn" href="https://kuis-arsip.rf.gd/">Buka Situs Live</a>
+      <a class="btn ghost" href="https://github.com/mahakammoonlightstudio-beep/kuis-arsip">Repositori</a>
+      <a class="btn ghost" href="https://github.com/mahakammoonlightstudio-beep/kuis-arsip/releases/tag/v1.0.0">Release v1.0.0</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h3>Ringkasan</h3>
+    <p>Sistem kuesioner kearsipan (bukan kuis santai): peserta mengerjakan survei secara individu atau di ruangan terjadwal dengan verifikasi kuota dan jadwal buka/tutup. Hasil dinilai otomatis lengkap dengan pembahasan per soal, dan sertifikat terbit otomatis setelah lulus - dapat diverifikasi publik.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Fitur Utama</h3>
+    <ul class="feat">
+      <li><strong>Kuesioner berkode ruangan dan individu</strong> - verifikasi kuota, jadwal, pemeriksaan duplikasi pengerjaan, dan seed deterministik untuk pengacakan soal/opsi per peserta.</li>
+      <li><strong>Penilaian dan sertifikat</strong> - penilaian otomatis dengan pembahasan, verifikasi sertifikat publik, pencetakan hasil.</li>
+      <li><strong>Papan peringkat dan pencapaian</strong> - leaderboard dengan medali dan lencana (Juara Kelas, Sempurna, Rajin, Lulus).</li>
+      <li><strong>Proctoring ringan</strong> - pencatatan perpindahan tab dan blur jendela selama ujian berjalan.</li>
+      <li><strong>Multi-bahasa (ID/EN)</strong>, notifikasi broadcast, dan preferensi pengguna.</li>
+      <li><strong>Panel administrasi lengkap</strong> - kelola pengguna/kuesioner/ruangan, impor-ekspor data, analitik soal, helpdesk tiket, umpan balik, dan jejak audit batch.</li>
+      <li><strong>PWA sinematik</strong> - service worker offline aman untuk data sesi, splash screen, tema gelap/terang dengan circular reveal.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Instalasi Singkat</h3>
+    <pre class="code">git clone https://github.com/mahakammoonlightstudio-beep/kuis-arsip.git
+mysql -u USER -p NAMA_DATABASE &lt; database.sql
+mysql -u USER -p NAMA_DATABASE &lt; database-upgrade.sql
+mysql -u USER -p NAMA_DATABASE &lt; database_indexes.sql
+cp config/config.local.example.php config/config.local.php  # isi kredensial
+php -S localhost:8000</pre>
+    <p class="note">Ganti password akun admin default segera setelah instalasi. Pengguna Laravel Herd dapat memakai <code>~/.config/herd/bin/php84/php.exe -S localhost:8000</code>. Folder <code>backups/</code> dilindungi .htaccess dan tidak pernah ikut ke repositori.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Dokumentasi</h3>
+    <ul class="list">
+      <li><strong>ARCHITECTURE.md</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/kuis-arsip/blob/main/ARCHITECTURE.md">panduan arsitektur dan konvensi kode</a></li>
+      <li><strong>LISENSI.md</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/kuis-arsip/blob/main/LISENSI.md">bukti kepemilikan dan riwayat versi</a></li>
+      <li><strong>SECURITY.md</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/kuis-arsip/blob/main/SECURITY.md">kebijakan pelaporan kerentanan</a></li>
+      <li><strong>Verifikasi sertifikat publik</strong> - <a href="https://kuis-arsip.rf.gd/quiz/verify.php">quiz/verify.php di situs live</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Mahakam Moonlight Studio - Tenggarong, Kalimantan Timur</span>
+    <a href="mailto:mahakammoonlightstudio@gmail.com">mahakammoonlightstudio@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suara SMK - Dokumentasi Mahakam Moonlight Studio</title>
+<meta name="description" content="Detail proyek Suara SMK: platform penilaian dan masukan anonim untuk organisasi siswa SMKN 1 Tenggarong.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Mahakam Moonlight <span>Studio</span> — Docs</h1>
+    <nav>
+      <a href="../index.html">Ikhtisar</a>
+      <a href="../changelog.html">Changelog</a>
+      <a href="https://github.com/mahakammoonlightstudio-beep">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">Semua proyek</a> / Suara SMK</p>
+    <h2>Suara SMK</h2>
+    <p class="tag">Platform penilaian dan masukan anonim untuk OSIS, MPK, dan ekstrakurikuler di SMKN 1 Tenggarong - rating bintang, komentar tersensor, dan panel admin dengan ekspor CSV.</p>
+    <div class="badges">
+      <span class="badge open">CC BY 4.0</span>
+      <span class="badge">PHP 7.2+</span>
+      <span class="badge">MySQL / MariaDB</span>
+      <span class="badge">PWA</span>
+      <span class="badge">v1.0.0</span>
+    </div>
+    <div class="cta">
+      <a class="btn" href="https://suara-smkn1tgr.infinityfreeapp.com/">Buka Situs Live</a>
+      <a class="btn ghost" href="https://github.com/mahakammoonlightstudio-beep/suarasmk">Repositori</a>
+      <a class="btn ghost" href="https://github.com/mahakammoonlightstudio-beep/suarasmk/releases/tag/v1.0.0">Release v1.0.0</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h3>Ringkasan</h3>
+    <p>Aplikasi web penilaian organisasi siswa yang ringan - dibangun dengan PHP native dan MySQL tanpa framework. Siswa memberi rating dan komentar anonim, panitia memantau hasil melalui panel admin, dan seluruh sistem berjalan di shared hosting.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Fitur Utama</h3>
+    <ul class="feat">
+      <li><strong>Penilaian anonim</strong> - rating bintang dan komentar untuk tiap organisasi, dengan sensor kata kasar otomatis (daftar kata dapat dikonfigurasi).</li>
+      <li><strong>Mode anti-duplikat</strong> - satu suara per hari per perangkat; dapat diatur per cookie, per IP, atau keduanya melalui konstanta <strong>DUPLICATE_MODE</strong>.</li>
+      <li><strong>Panel admin</strong> - kelola organisasi, lihat hasil, ekspor CSV, reset data; dilindungi password ADMIN_PASSWORD.</li>
+      <li><strong>Keamanan</strong> - CSRF token, session hardening (httponly, samesite), prepared statements PDO, sensor sebagian IP pada dashboard.</li>
+      <li><strong>PWA</strong> - dapat dipasang dan berfungsi offline melalui manifest dan service worker.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Instalasi Singkat</h3>
+    <pre class="code">git clone https://github.com/mahakammoonlightstudio-beep/suarasmk.git
+mysql -u USER -p NAMA_DATABASE &lt; database.sql
+mysql -u USER -p NAMA_DATABASE &lt; upgrade-voter-id.sql   # migrasi anti-duplikat
+# buat config.local.php berisi kredensial + ADMIN_PASSWORD
+php -S localhost:8000</pre>
+    <p class="note">File <code>config.local.php</code> tidak ikut ke repositori - isi kredensial di sana. Ganti <code>ADMIN_PASSWORD</code> default segera setelah deploy. Pengguna Laravel Herd dapat memakai <code>~/.config/herd/bin/php84/php.exe -S localhost:8000</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Dokumentasi</h3>
+    <ul class="list">
+      <li><strong>README</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/suarasmk#instalasi">instalasi lengkap</a> dan <a href="https://github.com/mahakammoonlightstudio-beep/suarasmk#struktur-proyek">struktur proyek</a></li>
+      <li><strong>SECURITY.md</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/suarasmk/blob/main/SECURITY.md">kebijakan pelaporan kerentanan</a></li>
+      <li><strong>LICENSE</strong> - <a href="https://github.com/mahakammoonlightstudio-beep/suarasmk/blob/main/LICENSE">CC BY 4.0</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Mahakam Moonlight Studio - Tenggarong, Kalimantan Timur</span>
+    <a href="mailto:mahakammoonlightstudio@gmail.com">mahakammoonlightstudio@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
